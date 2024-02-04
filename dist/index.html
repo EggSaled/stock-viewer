@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title></title>
+    <link rel='stylesheet' href='index.css'>
+  </head>
+  <body>
+    <h1 id='title'>Stock Viewer</h1>
+    <p id='description' class='description'>Please select the desired equity using the form below.</p>
+    <div class='container'>
+      <form>
+        <select id='equity-type'>
+          <option name='0'>(select one)</option>
+          <option name='1'>Stock</option>
+        </select>
+        <select id='time-series'>
+          <option name='0'>(select one)</option>
+        </select>
+        <label for='symbol'>Symbol: </label>
+        <input type='text' id='symbol' name='symbol'>
+        <button id='submit'>Submit</button>
+      </form>
+    </div>
+    <script src='main.js'></script>
+  </body>
+</html>
