@@ -1,13 +1,13 @@
 {
   "name": "stock-viewer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple project that takes stock info from Alpha Vantage API, and displays them with the power of D3.js.",
   "main": "index.js",
   "scripts": {
     "build": "npx webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "EggSaled",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.89.0",
