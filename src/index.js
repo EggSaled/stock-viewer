@@ -13,7 +13,6 @@ function renderGraph(data){
   // NOTE: The actual stock data has the date as the index, which is slightly annoying.
   var dates = Object.keys(stock);
   var prices = Object.values(stock);
-  console.log(prices);
 
   var graph = d3.select('#output')
   .append('svg')
@@ -61,6 +60,9 @@ function parseForm(event){
   fetch(requestURL)
   .then((res) => res.json())
   .then((data) => {
+    if(data.Information){
+      throw new Error('API Rate Limit');
+    }
     var debug = document.getElementById('debug');
     debug.textContent = JSON.stringify(data);
     renderGraph(data);
