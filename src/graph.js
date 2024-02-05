@@ -41,4 +41,15 @@ export default function renderGraph(data){
   .attr('id', 'y-axis')
   .attr('transform', `translate(${padding}, 0)`)
   .call(yAxis);
+
+  // Plotting data
+  graph.selectAll('rect')
+  .data(prices)
+  .enter()
+  .append('rect')
+  .attr('x', (_, i) => xScale(new Date(dates[i])))
+  .attr('y', (d) => yScale(Number(d['4. close'])))
+  .attr('width', 10)
+  .attr('height', (d) => (height - padding) - yScale(Number(d['4. close'])))
+  .attr('fill', 'blue')
 }
