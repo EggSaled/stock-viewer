@@ -1,5 +1,4 @@
 import renderGraph from './graph';
-import APIKEY from './secret.json';
 
 function parseForm(event){
   event.preventDefault();
