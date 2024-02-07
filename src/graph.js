@@ -51,5 +51,10 @@ export default function renderGraph(data){
   .attr('y', (d) => yScale(Number(d['4. close'])))
   .attr('width', 10)
   .attr('height', (d) => (height - padding) - yScale(Number(d['4. close'])))
+  .attr('data-open', (d) => d['1. open'])
+  .attr('data-high', (d) => d['2. high'])
+  .attr('data-low', (d) => d['3. low'])
+  .attr('data-close', (d) => d['4. close'])
+  .attr('data-volume', (d) => d['5. volume'])
   .attr('fill', 'blue')
 }
