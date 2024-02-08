@@ -1,4 +1,4 @@
-import renderGraph from './graph';
+import { renderGraph, drawLineGraph } from './graph';
 
 function parseForm(event){
   event.preventDefault();
@@ -24,7 +24,7 @@ function parseForm(event){
     }
     var debug = document.getElementById('debug');
     debug.textContent = JSON.stringify(data);
-    renderGraph(data);
+    drawLineGraph(data);
   })
   .catch((err) => { 
     console.error(err);
