@@ -12,6 +12,9 @@ h1{
   width: 80%;
   margin: 0 auto;
 }
+.hidden{
+  display: none;
+}
 form{
   width: 45%;
   margin: 0 auto;
