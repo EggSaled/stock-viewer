@@ -1,4 +1,4 @@
-import { renderGraph, drawLineGraph } from './graph';
+import { drawBarGraph, drawLineGraph } from './graph.js';
 
 function parseForm(event){
   event.preventDefault();
@@ -24,7 +24,16 @@ function parseForm(event){
     }
     var debug = document.getElementById('debug');
     debug.textContent = JSON.stringify(data);
-    drawLineGraph(data);
+    var graphType = document.getElementById('graph-type');
+    graphType.removeAttribute('class');
+    graphType.addEventListener('change', (event) => {
+      var graphTypes = [ drawBarGraph, drawLineGraph ];
+      var graph = document.getElementById('graph');
+      if(graph){
+        graph.remove();
+      }
+      graphTypes[event.target.value](data);
+    });
   })
   .catch((err) => { 
     console.error(err);

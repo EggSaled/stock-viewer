@@ -1,9 +1,15 @@
 import * as d3 from 'd3';
 
-export default function renderGraph(data){
+export function drawBarGraph(data){
   var width = 1000;
   var height = 800;
   var padding = 50;
+  
+  var graph = d3.select('#output')
+  .append('svg')
+  .attr('id', 'graph')
+  .attr('width', width)
+  .attr('height', height);
 
   var keys = Object.keys(data);
   var meta = data[keys[0]]; // Unused for now
@@ -12,12 +18,6 @@ export default function renderGraph(data){
   // NOTE: The actual stock data has the date as the index, which is slightly annoying.
   var dates = Object.keys(stock);
   var prices = Object.values(stock);
-
-  var graph = d3.select('#output')
-  .append('svg')
-  .attr('id', 'graph')
-  .attr('width', width)
-  .attr('height', height);
   
   // X-axis
   var xScale = d3.scaleTime()
@@ -60,11 +60,15 @@ export default function renderGraph(data){
 }
 
 export function drawLineGraph(data){
-  // NOTE: For now, the code for the graph setup is just the same for both
-  // bar graph and line graph.
   var width = 1000;
   var height = 800;
   var padding = 50;
+
+  var graph = d3.select('#output')
+  .append('svg')
+  .attr('id', 'graph')
+  .attr('width', width)
+  .attr('height', height);
 
   var keys = Object.keys(data);
   var meta = data[keys[0]]; // Unused for now
@@ -73,12 +77,6 @@ export function drawLineGraph(data){
   // NOTE: The actual stock data has the date as the index, which is slightly annoying.
   var dates = Object.keys(stock);
   var prices = Object.values(stock);
-
-  var graph = d3.select('#output')
-  .append('svg')
-  .attr('id', 'graph')
-  .attr('width', width)
-  .attr('height', height);
   
   // X-axis
   var xScale = d3.scaleTime()
